@@ -11,9 +11,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // create a Scanner object to read input
 
-        System.out.print("\n" + "Hello and welcome!");
         System.out.print("""
 
+                "Hello and welcome!"
+                
                 This program calculates exponential function term based on Maclaurin series expansion.
                 """);
         System.out.print("Enter value of x: ");
