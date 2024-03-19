@@ -22,6 +22,7 @@ public class Main {
                 Hello and welcome!
                 
                 This program calculates exponential function term based on Maclaurin series expansion.
+                
                 """);
         System.out.print("Enter value of x: ");
 
