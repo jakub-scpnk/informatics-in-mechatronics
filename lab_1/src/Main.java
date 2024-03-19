@@ -1,3 +1,9 @@
+/**
+ * Simple java program that calculates numerical approximation of exponential function using the Maclaurin series.
+ * It stops when error is less than 0.5 %
+ * Author: Jakub Szczepaniak
+ * Date: 18/03/2024
+ */
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +11,7 @@ public class Main {
         if (baseNum == 0 || baseNum == 1) {
             return 1;
         } else {
-            return baseNum * factorial(baseNum - 1);
+            return baseNum * factorial(baseNum - 1); // recursive call
         }
     }
     public static void main(String[] args) {
@@ -13,14 +19,14 @@ public class Main {
 
         System.out.print("""
 
-                "Hello and welcome!"
+                Hello and welcome!
                 
                 This program calculates exponential function term based on Maclaurin series expansion.
                 """);
         System.out.print("Enter value of x: ");
 
-        float x = scanner.nextFloat();
-        double ans = 1;
+        float x = scanner.nextFloat(); // the exponent value
+        double ans = 1; // answer of Maclaurin series expansion
         int iter = 1;
         double errAbs;
         double trueValue = Math.exp(x);
@@ -33,9 +39,12 @@ public class Main {
             iter += 1;
             System.out.println("e^" + x + " (iteration: " + iter +") = " + ans);
 
-            errAbs = Math.abs((ans - oldAns) / ans) * 100;
+            errAbs = Math.abs((ans - oldAns) / ans) * 100; // absolute error
+            System.out.printf("Error: %.2f", errAbs);
+            System.out.println(" % \n");
 
-        } while (errAbs > 1);
+
+        } while (errAbs > 0.5);
         scanner.close(); // closing Scanner object
     }
 }
